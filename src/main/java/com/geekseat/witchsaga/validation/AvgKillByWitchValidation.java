@@ -13,29 +13,32 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class AvgKillByWitchValidation {
 
-    @NotNull
     @Min(1)
+    @NotNull
     @ApiParam(
             name =  "ageOfDeathA",
             value = "Age of Death Person A",
             example = "9")
     int ageOfDeathA;
-    @NotNull
+
     @Min(1)
+    @NotNull
     @ApiParam(
             name =  "yearOfDeathA",
             value = "Year of Death Person A",
             example = "10")
     int yearOfDeathA;
-    @NotNull
+
     @Min(1)
+    @NotNull
     @ApiParam(
             name =  "ageOfDeathB",
             value = "Age of Death Person B",
             example = "11")
     int ageOfDeathB;
-    @NotNull
+
     @Min(1)
+    @NotNull
     @ApiParam(
             name =  "yearOfDeathB",
             value = "Year of Death Person B",

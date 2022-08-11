@@ -15,8 +15,10 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.stream.Collectors;
 
 @CrossOrigin
@@ -30,6 +32,28 @@ public class WitchSagaController {
     @Autowired
     public WitchSagaController (WitchSagaService witchSagaService) {
         this.witchSagaService = witchSagaService;
+    }
+
+    /**
+     * Initial URL
+     * @return Redirect to /api URL
+     */
+    @GetMapping("/")
+    public RedirectView getInit() {
+
+        return new RedirectView("/api");
+    }
+
+    /**
+     * Get status API ready for using
+     * @return Status API ready for using
+     */
+    @GetMapping("/api")
+    public ResponseEntity<Object> getReady() {
+
+        return new ResponseEntity<>(
+                "API is Ready!",
+                HttpStatus.OK);
     }
 
     /**
