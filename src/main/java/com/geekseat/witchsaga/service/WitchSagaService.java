@@ -10,6 +10,11 @@ public class WitchSagaService {
 
     private HashMap<Integer, Integer> listFibonacci = new HashMap<>();
 
+    /**
+     * Get sum of fibonacci sequence
+     * @param nDigit N sequence will be sum
+     * @return Sum of fibonacci sequence
+     */
     public int fibonacci(int nDigit) {
         int num1 = 1, num2 = 1;
         int counter = 0;
@@ -34,6 +39,14 @@ public class WitchSagaService {
         return sum;
     }
 
+    /**
+     * Get average killed people by the witch
+     * @param ageOfDeathA Age of death person A
+     * @param yearOfDeathA Year of death person A
+     * @param ageOfDeathB Age of death person B
+     * @param yearOfDeathB Year of death person B
+     * @return Average killed people by the witch
+     */
     public AvgKillByWitchDto avgKillByWitch(int ageOfDeathA, int yearOfDeathA,
                                             int ageOfDeathB, int yearOfDeathB) {
 

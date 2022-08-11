@@ -5,8 +5,6 @@ import com.geekseat.witchsaga.service.WitchSagaService;
 import com.geekseat.witchsaga.util.ResponseMessage;
 import com.geekseat.witchsaga.validation.AvgKillByWitchValidation;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -34,6 +32,12 @@ public class WitchSagaController {
         this.witchSagaService = witchSagaService;
     }
 
+    /**
+     * Get average response killed people by the witch
+     * @param avgKillByWitchValidation Use to save params and validate it
+     * @param bindingResult Use to check error input parameter
+     * @return Average killed people by the witch
+     */
     @ApiOperation(value = "Get average kill by witch", notes = "Returns average people killed by witch")
     @GetMapping(path = "api/avg-kill-by-witch", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<Object> avgKillByWitch (@Validated AvgKillByWitchValidation avgKillByWitchValidation,
